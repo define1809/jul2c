@@ -1,2 +1,9 @@
 # jul2c
-[pet-project] Simple translator from Julia-plus-plus to C
+This is my simple translator from
+[Julia++](https://github.com/yukatan1701/Julia-plus-plus) to C, created in honor of my love. In my opinion, translators are one of the most elegant types of programs that directly illustrate the Church-Turing thesis.
+
+## Features:
+
+## How to use it?
+
+## How to learn it?
