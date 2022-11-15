@@ -6,9 +6,10 @@
 #include <lexer.h>
 
 static bool is_jul(const char *filename) {
-  size_t i = strlen(filename);
-  return (filename[i - 4] == '.' && filename[i - 3] == 'j' &&
-          filename[i - 2] == 'u' && filename[i - 1] == 'l');
+  size_t len = strlen(filename);
+  if (len < 4)
+    false;
+  return !strncmp(filename + len - 4, ".jul", 4);
 }
 
 int main(int argc, char **argv) {
