@@ -46,7 +46,8 @@ void token_list_free(token_list_t **head) {
 }
 
 static bool is_space_symbol(const char ch) {
-  return (ch == ' ' || ch == '\t' || ch == '\n' || ch == '\0');
+  return (ch == ' ' || ch == '\t' || ch == '\n' ||
+          ch == '#' || ch == '\0');
 }
 
 static bool is_split_symbol(const char ch) {   
@@ -64,6 +65,10 @@ token_list_t *split(const char *code_jul) {
   char *lexeme = NULL;
   size_t j = 2;
   for (size_t i = 0; code_jul[i]; ++i, ++j) {
+    if (code_jul[i] == '#') {
+      while (code_jul[i] && code_jul[i] != '\n')
+        ++i;
+    }
     if (is_split_symbol(code_jul[i])) {
       if (lexeme != NULL) {
         token = malloc(sizeof(token_t)); 
