@@ -88,7 +88,8 @@ token_type_t lexeme2type(const char *lexeme) {
     switch (*lexeme) {
     case '=': return TYPE_ASSIGN;
     case '+': return TYPE_PLUS;
-    case '*': return TYPE_MINUS;
+    case '-': return TYPE_MINUS;
+    case '*': return TYPE_MULT;
     case '/': return TYPE_DIV;
     case '%': return TYPE_MOD;
     case '(': return TYPE_LPAR;
