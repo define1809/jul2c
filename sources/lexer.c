@@ -54,7 +54,9 @@ static bool is_split_symbol(const char ch) {
   return (is_space_symbol(ch)      ||
           ch == '+'  || ch == '-'  || ch == '*'  ||
           ch == '/'  || ch == '%'  || ch == '('  ||
-          ch == ')'  || ch == '=');
+          ch == ')'  || ch == '='  || ch == '['  ||
+          ch == ']'  || ch == '>'  || ch == '<'  ||
+          ch == '&'  || ch == '^'  || ch == '|');
 }
 
 token_list_t *split(const char *code_jul) {
