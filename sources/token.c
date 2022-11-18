@@ -143,6 +143,8 @@ static char *type2str(const token_type_t type) {
     case TYPE_LEQ:        return "LEQ";
     case TYPE_GT:         return "GT";
     case TYPE_GEQ:        return "GEQ";
+    case TYPE_SHL:        return "SHL";
+    case TYPE_SHR:        return "SHR";
     case TYPE_FUNCTION:   return "FUNCTION";
     case TYPE_RETURN:     return "RETURN";
     case TYPE_PRINTLN:    return "PRINTLN";

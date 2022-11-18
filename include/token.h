@@ -30,6 +30,8 @@ enum TOKEN_TYPE {
   TYPE_LEQ,                   // <=
   TYPE_GT,                    // >
   TYPE_GEQ,                   // >=
+  TYPE_SHL,                   // <<
+  TYPE_SHR,                   // >>
   TYPE_FUNCTION,              // keyword: function
   TYPE_RETURN,                // keyword: return
   TYPE_PRINTLN,               // keyword: println

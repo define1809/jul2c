@@ -57,7 +57,7 @@ static bool is_split_symbol(const char ch) {
           ch == ')'  || ch == '='  || ch == '['  ||
           ch == ']'  || ch == '>'  || ch == '<'  ||
           ch == '&'  || ch == '^'  || ch == '|'  ||
-          ch == '!');
+          ch == '!'  || ch == ','                  );
 }
 
 token_list_t *split(const char *code_jul) {
@@ -120,6 +120,20 @@ token_list_t *split(const char *code_jul) {
         token->type = TYPE_GEQ;
         head = token_list_push(head, token);
         i += 2; 
+        is_2len_lex = true;
+      } else if (code_jul[i] == '<' && code_jul[i + 1] == '<') {
+        token = malloc(sizeof(token_t));
+        token->lexeme = NULL;
+        token->type = TYPE_SHL;
+        head = token_list_push(head, token);
+        i += 2;
+        is_2len_lex = true; 
+      } else if (code_jul[i] == '>' && code_jul[i + 1] == '>') {
+        token = malloc(sizeof(token_t));
+        token->lexeme = NULL;
+        token->type = TYPE_SHR;
+        head = token_list_push(head, token);
+        i += 2;
         is_2len_lex = true;
       }
       if (!is_space_symbol(code_jul[i]) && !is_2len_lex) {
