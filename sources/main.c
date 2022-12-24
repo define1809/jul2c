@@ -8,7 +8,7 @@
 static bool is_jul(const char *filename) {
   size_t len = strlen(filename);
   if (len < 4)
-    false;
+    return false;
   return !strncmp(filename + len - 4, ".jul", 4);
 }
 
